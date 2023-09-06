@@ -1,29 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buscador de imágenes de la NASA</title>
-
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <main>
-    <div class="text-center container">
-      <div class="row py-lg-3">
-        <div class="col-lg-6 col-md-8 mx-auto">
+    <div class="container text-center py-5">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
           <h1 class="fw-light">Buscador de imágenes de la NASA</h1>
-          <input type="search" class="form-control" name="buscar" id="inputBuscar" placeholder="Ej.: JUPITER">
-          <button class="btn btn-primary my-2" id="btnBuscar">Buscar imágenes</button>
+          <div class="input-group mb-3">
+            <input type="search" class="form-control" name="buscar" id="inputBuscar" placeholder="Ej.: JUPITER">
+            <button class="btn btn-primary" id="btnBuscar">Buscar imágenes</button>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div id="contenedor">
+      <div id="contenedor" class="row">
       </div>
     </div>
   </main>
@@ -40,8 +39,9 @@
     </div>
   </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="js/space.js"></script>
-
 </body>
-
 </html>

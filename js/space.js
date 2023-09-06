@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const contenedor = document.getElementById("contenedor");
   
     btnBuscar.addEventListener("click", function () {
-      const buscarTermino = inputBuscar.value.trim();
+      const buscarTerm = inputBuscar.value.trim();
   
-      if (buscarTermino !== "") {
-        const apiUrl = `https://images-api.nasa.gov/search?q=${buscarTermino}`;
+      if (buscarTerm !== "") {
+        const apiUrl = `https://images-api.nasa.gov/search?q=${buscarTerm}`;
   
-        // solicitud
+        // Realiza la solicitud al servidor de la NASA
         fetch(apiUrl)
           .then((response) => response.json())
           .then((data) => {
@@ -28,18 +28,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 const imageUrl = item.links[0].href;
                 const dateCreated = item.data[0].date_created;
   
-                // Crea un elemento para mostrar la imagen y la información
-                const imageElement = document.createElement("div");
-                imageElement.className = "image-item";
-                imageElement.innerHTML = `
-                  <img src="${imageUrl}" alt="${title}">
-                  <h2>${title}</h2>
-                  <p>${description}</p>
-                  <p>Fecha de Creación: ${dateCreated}</p>
+                // Crea una tarjeta para mostrar la imagen y la información
+                const cardElement = document.createElement("div");
+                cardElement.className = "col-lg-4 col-md-6 mb-4";
+                cardElement.innerHTML = `
+                  <div class="card">
+                    <img src="${imageUrl}" class="card-img-top" alt="${title}">
+                    <div class="card-body">
+                      <h5 class="card-title">${title}</h5>
+                      <p class="card-text">${description}</p>
+                      <p class="card-text">Fecha de Creación: ${dateCreated}</p>
+                    </div>
+                  </div>
                 `;
   
-                // Agrega el elemento al contenedor
-                contenedor.appendChild(imageElement);
+                // Agrega la tarjeta al contenedor
+                contenedor.appendChild(cardElement);
               });
             }
           })
@@ -49,3 +53,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  

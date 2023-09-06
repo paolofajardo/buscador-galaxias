@@ -1,3 +1,8 @@
 main {
     min-height: calc(100vh - 160px);
   }
+
+.card {
+  height: 300px; /* Altura fija para las tarjetas */
+  overflow-y: auto; /* Habilitar el desplazamiento vertical si es necesario */
+}
